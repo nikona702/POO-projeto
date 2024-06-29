@@ -12,6 +12,7 @@ public class Empresa {
         empregados = new ArrayList<>();
         SimpleDateFormat  sdf = new SimpleDateFormat("dd/MM/yyyy");
         empregados.add(new Empregado("Bruno", "123123123", sdf.parse("02/02/2004") , "123123123","123123123"));
+        empregados.add(new Empregado("Nikolas", "123123123", sdf.parse("04/07/2004") , "123123123","123123123"));
     }
     public static Empresa getInstance() throws ParseException{
         if (instance == null){
@@ -23,6 +24,10 @@ public class Empresa {
     public void addEmpregado(Empregado emp){
         this.empregados.add(emp);
     }
+    public void removeEmpregado(Empregado emp){
+        this.empregados.remove(emp);
+    }
+    
     public List<Empregado> getEmpregados(){
         return empregados;
     }
